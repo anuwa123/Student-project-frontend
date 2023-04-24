@@ -1,0 +1,36 @@
+.container-fluid{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+   
+   
+}
+
+form{
+    width:500px;
+}
+
+#side{
+    color:antiquewhite;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+mat-card{
+    background-color: whitesmoke;
+
+}
+
+input{
+    margin-left: 5px;
+    width: 480px;
+}
+label{
+    margin-left: 5px;
+}
+
+#submit{
+    margin-left: 5px;
+}
+

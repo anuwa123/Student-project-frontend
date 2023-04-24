@@ -1,0 +1,45 @@
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 20px 8px 8px 12px;
+}
+
+.addingrow{
+  height: 80px;
+  background-color: antiquewhite;
+}
+
+.d-flex{
+  margin-top: 20px;
+  float:right;
+  margin-right: 10px;
+}
+
+mat-paginator{
+margin-top: 42vh;
+}
+
+@media screen and (max-width: 767px) {
+  .example-button-row .mat-mdc-button-base {
+    margin-top: -55px;
+  }
+  
+} 
+td {
+  border: 1px solid black;
+  
+}
+td {
+  padding: 5px;
+  text-align: left;
+  text-size-adjust: 10px;
+}
+
+th{
+text-align: left;
+text-size-adjust: 10px;
+}

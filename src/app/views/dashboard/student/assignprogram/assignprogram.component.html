@@ -1,0 +1,52 @@
+
+
+<div class="container-fluid">
+    <mat-card>
+    <form class="border border-dark">
+        <div class="col text-center p-2 mb-3 bg-dark">
+            <div class="col text p-2 mb-3" id=side>
+                <span class="fs-3">Assign program</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="studentId" class="form-label">Student ID:</label>
+               <input type="text" class="form-control" [(ngModel)]="studentRegister.studentId" id="studentId"  name="studentId" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="dropdown">
+            <div class="col mb-3">    
+                <label for="name" class="form-label">Program ID</label>
+                <ng-select  (change)="getProgramId($event)"  name="" id="" [(ngModel)]="studentRegister.programId" style="background-color: azure; border-bottom: 1px solid red " >    
+                    <ng-option *ngFor="let program of programList" [value]="program.programId">{{program.programId}}  </ng-option>    
+                </ng-select>                   
+            </div>
+            </div>
+            <!-- <mat-label for="name" class="form-label">Program ID</mat-label>
+            <mat-form-field appearance="fill" style="height:65px">
+                <mat-label>Select a Program</mat-label>
+            <mat-select matNativeControl (change)="getProgramId($event)"   [(ngModel)]="studentRegister.programId">
+                <mat-option *ngFor="let program of programList" [value]="program.programId">{{program.programId}}</mat-option>
+                <mat-option>
+                    
+                </mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <label for="address" class="form-label">Register Date</label>
+                <input type="date" class="form-control" [(ngModel)]="studentRegister.registerDate" id="registerDate"  name="registerDate">
+            </div>
+        </div>
+        <div>
+            <button (click)="onSubmit()" class="btn btn-primary" type="submit" id="update" > Save </button>
+        </div>
+            <br>
+    </form>
+</mat-card>
+    </div>
+
+    
+

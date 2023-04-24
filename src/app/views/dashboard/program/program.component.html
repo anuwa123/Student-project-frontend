@@ -1,0 +1,65 @@
+<!-- <div style="background-color: antiquewhite;">
+    <section>       
+        <div class="example-button-row">
+          <a mat-raised-button routerLink="programform" color="primary" routerLinkActive="active">Add Program</a>
+          <form class="d-flex" role="search">
+            <input  #data (keyup)="searchProgram($event)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button (click)="searchProgramOnClick(data.value)"  class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
+        
+    </section>
+</div> -->
+<div class=" addingrow">
+    <section> 
+        <form class="d-flex" role="search">
+            <input  #data (keyup)="searchProgram($event)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button (click)="searchProgramOnClick(data.value)"  class="btn btn-outline-success" type="submit">Search</button>
+        </form>        
+        <div class="example-button-row">
+          <a mat-raised-button routerLink="programform" color="primary" routerLinkActive="active">Add Program</a>
+             
+        </div>
+    </section>
+    
+</div>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Program Id</th>
+            <th>Program Name</th>
+            <th>Duration</th>
+            <th>Cost</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let program of programs">   
+            <td>{{program.programId}}</td>
+            <td>{{program.name}}</td>
+            <td>{{program.duration}}</td>
+            <td>{{program.cost}}</td>   
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <button (click)="navigateToUpdateForm(program.programId)" type="button" class="btn btn-info"> Update </button>
+                    <button (click)="deleteProgramById(program.programId)"  type="button"class="btn btn-danger" style="margin: 10px;"> Delete </button>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+<div class="d-flex justify-content-center">
+    <ngb-pagination
+    [collectionSize]="totalElement"
+    [(page)]="page"
+    [maxSize]="2"
+    [rotate]="true"
+    [boundaryLinks]="false"
+    (pageChange)="onPaginationClick(page)"
+    style="float: right">
+    </ngb-pagination>                   
+  </div>
+

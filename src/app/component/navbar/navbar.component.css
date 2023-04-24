@@ -1,0 +1,14 @@
+/* nav{
+    height: 60px;
+    background-color: black;
+    color: white;
+} */
+.nav-link{
+    color: aliceblue;
+}
+.nav-item{
+    margin-top: 17px;
+}
+.navbar-brand{
+    margin-top: 14px;
+}

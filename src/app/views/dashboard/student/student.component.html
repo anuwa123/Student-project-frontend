@@ -1,0 +1,54 @@
+<div class=" addingrow">
+    <section>
+        <form class="d-flex" role="search">
+            <input  #data (keyup)="searchStudent($event)" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button (click)="searchStudentOnClick(data.value)"  class="btn btn-outline-success" type="submit">Search</button>
+        </form>     
+        <div class="example-button-row">
+         <a mat-raised-button routerLink="studentform" color="primary" routerLinkActive="active">Add Student</a>    
+        </div>
+    </section>
+    
+</div>
+
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>Student Name</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student  of students">   
+            <td>{{student.studentId}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.contact}}</td>   
+            <td>
+                <div class="d-grid gap-2 d-md-block">
+                    <button (click)="navigateToUpdateForm(student.studentId)" type="button" class="btn btn-info" > update </button>
+                    <button (click)="deleteStudentById(student.studentId)"    type="button"class="btn btn-danger" style="margin: 10px;"> delete </button>
+                    <button (click)="navigateToAssignStudentForm(student.studentId)" type="button"class="btn btn-warning" style="margin: 10px;"> Assign Program </button>
+                </div>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-center">
+    <ngb-pagination
+    [collectionSize]="totalElement"
+    [(page)]="page"
+    [maxSize]="2"
+    [rotate]="true"
+    [boundaryLinks]="false"
+    (pageChange)="onPaginationClick(page)"
+    style="float: right">
+    </ngb-pagination>                   
+   
+  </div>
+

@@ -1,0 +1,28 @@
+.container-fluid{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+   
+   
+}
+
+form{
+    width:500px;
+}
+ng-option{
+    
+    background-color: blue;
+
+}
+
+#side{
+    color:antiquewhite;
+    align-items: center;
+    margin-top: 15px;
+    
+}
+mat-card{
+    background-color: whitesmoke;
+
+}
